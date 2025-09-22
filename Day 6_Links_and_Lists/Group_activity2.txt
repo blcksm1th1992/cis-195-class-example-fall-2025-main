@@ -1,0 +1,17 @@
+
+Activity 2:
+
+
+1.) Feature List (Link Wireframe)
+    Example:
+        Homepage -> Login page
+        Login Page -> Backend (DB ( Duck), Framework (Django), (Form))
+
+
+2.) Explicitly define 2.
+
+3.) 5 Slide Powerpoint
+
+4.) Question Period
+
+5.) 23rd of Sept.
