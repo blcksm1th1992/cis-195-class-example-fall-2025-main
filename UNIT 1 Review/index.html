@@ -4,14 +4,17 @@
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, intial scale=1.0">
     <title>Home | Responsive Demo </title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="styles/style_template.css">
+
 </head>
 <body>
     <!-- Header -->
     <header>
         <h1> Responsive Demo Site</h1>
         <!--Nav -->
-        <nav>
+        <button class="nav-toggle" aria-label="toggle navigation">☰</button>
             <a href="index.html">Home</a>
             <a href="lessons.html">Lessons</a>
             <a href="resources.html">Resources</a>
@@ -68,5 +71,11 @@
     <footer>
         <p>&copy; 2025 Responsive Demo</p>
     </footer>
+    <!-- NEW: JavaScript for hamburger menu -->
+    <script>
+        document.querySelector(".nav-toggle").addEventListener("click", () => {
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>-
 </body>
 </html>
