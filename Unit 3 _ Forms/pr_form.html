@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym PR Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #e50914;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    form {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 450px;
+      margin: 30px auto;
+      box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+      font-size: 15px;
+    }
+
+    button, .print-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #e50914;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    button:hover, .print-button:hover {
+      background-color: #b00610;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+      background-color: #1a1a1a;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #e50914;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #222;
+    }
+
+    caption {
+      caption-side: top;
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #e50914;
+    }
+
+    .print-button {
+      max-width: 200px;
+      margin: 20px auto;
+    }
+
+    @media (max-width: 600px) {
+      table, th, td {
+        font-size: 14px;
+      }
+      form {
+        padding: 15px;
+      }
+    }
+
+    /* 🖨️ PRINT STYLES */
+    @media print {
+      body {
+        background-color: white;
+        color: black;
+      }
+
+      form, .print-button {
+        display: none; /* hide form and print button when printing */
+      }
+
+      h1 {
+        color: black;
+        border-bottom: 2px solid black;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+      }
+
+      table {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+      }
+
+      th {
+        background-color: #f0f0f0;
+        color: black;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      caption {
+        color: black;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Gym PR Tracker</h1>
+
+  <!-- Example Form -->
+  <form action="#" method="post">
+    <label for="name">Athlete Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="squat">Squat (lbs):</label>
+    <input type="number" id="squat" name="squat" placeholder="Ex: 315">
+
+    <label for="bench">Bench Press (lbs):</label>
+    <input type="number" id="bench" name="bench" placeholder="Ex: 225">
+
+    <label for="deadlift">Deadlift (lbs):</label>
+    <input type="number" id="deadlift" name="deadlift" placeholder="Ex: 405">
+
+    <label for="press">Push Press (lbs):</label>
+    <input type="number" id="press" name="press" placeholder="Ex: 185">
+
+    <label for="rows">Barbell Rows (lbs):</label>
+    <input type="number" id="rows" name="rows" placeholder="Ex: 185">
+
+    <button type="submit">Submit PRs</button>
+  </form>
+
+  <!-- Example Static Table -->
+  <table>
+    <caption>Recorded PRs</caption>
+    <thead>
+      <tr>
+        <th>Athlete</th>
+        <th>Squat</th>
+        <th>Bench</th>
+        <th>Deadlift</th>
+        <th>Push Press</th>
+        <th>Rows</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Miles</td>
+        <td>315</td>
+        <td>225</td>
+        <td>405</td>
+        <td>185</td>
+        <td>185</td>
+      </tr>
+      <tr>
+        <td>Alex</td>
+        <td>275</td>
+        <td>185</td>
+        <td>365</td>
+        <td>155</td>
+        <td>165</td>
+      </tr>
+      <tr>
+        <td>Jordan</td>
+        <td>295</td>
+        <td>205</td>
+        <td>385</td>
+        <td>165</td>
+        <td>175</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a href="#" class="print-button" onclick="window.print()">🖨️ Print PR Sheet</a>
+
+</body>
+</html>

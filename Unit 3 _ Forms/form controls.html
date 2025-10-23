@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gym Intake Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #000; /* black background */
+        color: #fff; /* white text for contrast */
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #1a1a1a;
+        border: 2px solid #ff0000; /* red border */
+        border-radius: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #ff0000; /* red headings */
+    }
+
+    label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ff0000;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    button {
+        background-color: #ff0000;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #cc0000;
+    }
+
+    .checkbox-group,
+    .radio-group {
+        margin-bottom: 15px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Gym Intake Form</h1>
+    <form>
+        <!-- Text Fields -->
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="John Doe">
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com">
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="12" max="100">
+
+        <!-- Radio Buttons -->
+        <label>Gender</label>
+        <div class="radio-group">
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male" style="display:inline;">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female" style="display:inline;">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other" style="display:inline;">Other</label>
+        </div>
+
+        <!-- Checkboxes -->
+        <label>Fitness Goals</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="strength" name="goal" value="strength">
+            <label for="strength" style="display:inline;">Build Strength</label><br>
+            <input type="checkbox" id="weightloss" name="goal" value="weightloss">
+            <label for="weightloss" style="display:inline;">Weight Loss</label><br>
+            <input type="checkbox" id="endurance" name="goal" value="endurance">
+            <label for="endurance" style="display:inline;">Endurance</label><br>
+            <input type="checkbox" id="flexibility" name="goal" value="flexibility">
+            <label for="flexibility" style="display:inline;">Flexibility</label>
+        </div>
+
+        <!-- Select / Dropdown -->
+        <label for="membership">Membership Type</label>
+        <select id="membership" name="membership">
+            <option value="">--Select--</option>
+            <option value="basic">Basic</option>
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+        </select>
+
+        <!-- Textarea -->
+        <label for="notes">Additional Notes / Medical Conditions</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Enter any notes here..."></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Form</button>
+    </form>
+</div>
+
+</body>
+</html>

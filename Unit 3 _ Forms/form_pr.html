@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Gym PRs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #e50914;
+      text-align: center;
+    }
+
+    form {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 450px;
+      margin: 30px auto;
+      box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #e50914;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #b00610;
+    }
+
+    a {
+      color: #e50914;
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Enter Your Gym PRs</h1>
+
+  <form id="prForm">
+    <label for="name">Athlete Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="squat">Squat (lbs):</label>
+    <input type="number" id="squat">
+
+    <label for="bench">Bench Press (lbs):</label>
+    <input type="number" id="bench">
+
+    <label for="deadlift">Deadlift (lbs):</label>
+    <input type="number" id="deadlift">
+
+    <label for="press">Push Press (lbs):</label>
+    <input type="number" id="press">
+
+    <label for="rows">Barbell Rows (lbs):</label>
+    <input type="number" id="rows">
+
+    <button type="submit">Save PRs</button>
+  </form>
+
+  <a href="display_pr.html">View Recorded PRs →</a>
+
+  <script>
+    document.getElementById("prForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const squat = document.getElementById("squat").value || "—";
+      const bench = document.getElementById("bench").value || "—";
+      const deadlift = document.getElementById("deadlift").value || "—";
+      const press = document.getElementById("press").value || "—";
+      const rows = document.getElementById("rows").value || "—";
+
+      const entry = { name, squat, bench, deadlift, press, rows };
+
+      // Get current data or empty array
+      const existing = JSON.parse(localStorage.getItem("gymPRs")) || [];
+      existing.push(entry);
+
+      // Save back to localStorage
+      localStorage.setItem("gymPRs", JSON.stringify(existing));
+
+      alert("✅ PRs saved successfully!");
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Submission Results</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  #output {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+</style>
+</head>
+<body>
+
+<h2>Submitted Information</h2>
+<div id="output"></div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name");
+  const email = params.get("email");
+  const message = params.get("message");
+
+  const output = document.getElementById("output");
+  if (name && email) {
+    output.innerHTML = `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong> ${message || "(none)"}</p>
+    `;
+  } else {
+    output.textContent = "No data received.";
+  }
+</script>
+
+</body>
+</html>
