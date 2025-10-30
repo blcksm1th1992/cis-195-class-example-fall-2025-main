@@ -1,0 +1,165 @@
+/* === Shared Iron Clad Inspired Style === */
+body {
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #111;
+  color: #eee;
+  line-height: 1.6;
+}
+nav {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  background: #e50914;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+nav a:hover { background: #ff3333; }
+section {
+  min-height: 100vh;
+  border-bottom: 2px solid #e50914;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+h2 { color: #e50914; margin-bottom: 20px; }
+
+/* Speech Bubble */
+.speech {
+  background: #222;
+  border: 2px solid #e50914;
+  color: #eee;
+  padding: 20px;
+  max-width: 400px;
+  border-radius: 15px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.5s;
+}
+.speech::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 40px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #e50914 transparent transparent transparent;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Level 1: Hover === */
+.hover-btn {
+  background: #e50914;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: transform 5s;
+}
+.hover-btn:hover { transform: scale(10.2); }
+
+/* === Level 2: Focus === */
+.focus-input {
+  padding: 10px;
+  border: 2px solid #444;
+  border-radius: 5px;
+  background: #222;
+  color: white;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.focus-input:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 10px #e50914;
+}
+
+/* === Level 3: Active === */
+.active-card {
+  background: #e50914;
+  color: white;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: transform 0.1s;
+}
+.active-card:active { transform: scale(0.9); }
+
+/* === Level 4: Scroll === */
+.scroll-box {
+  width: 200px;
+  height: 200px;
+  background: #e50914;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: reveal 1s forwards;
+  animation-delay: 0.5s;
+}
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Level 5: Checkbox Toggle === */
+.menu-toggle {
+  display: none;
+}
+.menu-label {
+  background: #e50914;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.slide-menu {
+  width: 250px;
+  background: #222;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100vh;
+  transition: left 0.5s;
+  padding: 20px;
+}
+.menu-toggle:checked + .slide-menu {
+  left: 0;
+}
+
+/* === Level 6: Multi-Trigger Orb === */
+.orb {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e50914, #111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+.orb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px #e50914;
+}
+.orb:active {
+  transform: scale(0.9);
+  background: radial-gradient(circle, #ff3333, #111);
+}
+.orb:focus {
+  outline: none;
+  box-shadow: 0 0 25px #fff;
+}
